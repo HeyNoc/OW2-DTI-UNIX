@@ -1,0 +1,9 @@
+Rule: Dead Players Can Judge
+- Event: Ongoing - Global
+- Conditions:
+    - Is Dead(Event Player) == True
+- Actions:
+    - Create In-World Text for All Players (Text: "Vote for the best player", Position: Top Center)
+    - Create HUD Text (Text: "Press [Interact] to give a vote!", Recipients: Dead players)
+    - Set Player Score(Event Player, Score + 1) [If a player gets a vote]
+    - Disable Ability 1, 2, Ult [Optional: Prevent dead players from re-engaging]
